@@ -7,6 +7,7 @@ import GlobalAvailability from "@/components/GlobalAvailability";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -30,6 +31,7 @@ const Index = () => {
         <div id="faq">
           <FAQ />
         </div>
+        <CTASection />
       </main>
       <Footer />
     </div>

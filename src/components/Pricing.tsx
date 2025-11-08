@@ -1,107 +1,115 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import logoIcon from "@/assets/logo-icon.png";
 
 const plans = [
   {
-    name: "Starter",
-    price: "99",
+    name: "Hobby",
+    price: "0",
     period: "/month",
-    description: "Perfect for small teams",
     features: [
-      "Up to 50 interviews/month",
-      "Basic analytics",
-      "Email support",
-      "2 team members",
-      "Interview recording",
-      "Feedback templates",
+      "Community forum access",
+      "Cancel anytime",
     ],
   },
   {
-    name: "Professional",
+    name: "Starter",
     price: "299",
     period: "/month",
-    description: "For growing companies",
     popular: true,
     features: [
-      "Up to 200 interviews/month",
-      "Advanced analytics",
-      "Priority support",
-      "10 team members",
-      "Interview recording",
-      "Feedback templates",
-      "Custom branding",
-      "API access",
-      "Integrations",
+      "Access to basic analytics reports",
+      "Community forum access",
+      "Unlimited Tokens",
+      "24×7 Support",
+      "Everything in Hobby Plan",
+      "Cancel anytime",
     ],
   },
   {
-    name: "Enterprise",
+    name: "Pro",
     price: "1490",
     period: "/month",
-    description: "For large organizations",
     features: [
-      "Unlimited interviews",
-      "Enterprise analytics",
-      "Dedicated support",
-      "Unlimited team members",
-      "Interview recording",
-      "Feedback templates",
-      "Custom branding",
-      "API access",
-      "Integrations",
-      "Custom contracts",
-      "SLA guarantee",
+      "Real-time data processing",
+      "AI-powered insights",
+      "Everything in Hobby Plan",
+      "Cancel anytime",
     ],
   },
 ];
 
 const Pricing = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background relative">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            Pricing so simple, you'll buy instantly
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Choose the perfect plan for your hiring needs
-          </p>
+        <div className="text-center mb-4">
+          <span className="inline-block px-4 py-1.5 bg-muted rounded-full text-sm font-medium mb-8">
+            pricing
+          </span>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            Pricing so simple, you'd buy instantly
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Pick from our plans and get started in minutes, simple for everyone.
+          </p>
+        </div>
+
+        {/* Floating Logo Icon */}
+        <div className="absolute top-32 right-20 hidden xl:block">
+          <div className="w-20 h-20 bg-card rounded-2xl shadow-soft flex items-center justify-center animate-float">
+            <img src={logoIcon} alt="" className="w-12 h-12" />
+          </div>
+        </div>
+        
+        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
           {plans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative rounded-3xl p-8 ${
+              className={`relative rounded-3xl p-8 transition-all ${
                 plan.popular 
-                  ? 'bg-primary text-primary-foreground shadow-card scale-105' 
+                  ? 'bg-primary text-primary-foreground shadow-card lg:scale-105' 
                   : 'bg-card border border-border shadow-soft'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-foreground text-background px-4 py-1 rounded-full text-sm font-medium">
-                  Most Popular
+                <div className="absolute -top-3 right-6 bg-background text-foreground px-4 py-1.5 rounded-full text-sm font-medium shadow-soft">
+                  Featured
                 </div>
               )}
               
-              <div className="mb-8">
+              <div className="mb-6">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className={plan.popular ? 'text-primary-foreground/80' : 'text-muted-foreground'}>
-                  {plan.description}
-                </p>
               </div>
               
               <div className="mb-8">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-bold">{plan.price}</span>
+                  <span className="text-xl">$</span>
+                  <span className="text-6xl font-bold tracking-tight">{plan.price}</span>
                   <span className={plan.popular ? 'text-primary-foreground/80' : 'text-muted-foreground'}>
                     {plan.period}
                   </span>
                 </div>
               </div>
               
+              <ul className="space-y-4 mb-8">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                      plan.popular ? 'text-primary-foreground' : 'text-primary'
+                    }`} />
+                    <span className={`text-sm ${plan.popular ? 'text-primary-foreground/90' : 'text-foreground'}`}>
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              
               <Button 
-                className={`w-full mb-8 ${
+                className={`w-full ${
                   plan.popular 
                     ? 'bg-background text-foreground hover:bg-background/90' 
                     : ''
@@ -110,19 +118,6 @@ const Pricing = () => {
               >
                 Get Started
               </Button>
-              
-              <ul className="space-y-3">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                      plan.popular ? 'text-primary-foreground' : 'text-primary'
-                    }`} />
-                    <span className={plan.popular ? 'text-primary-foreground/90' : 'text-foreground'}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>

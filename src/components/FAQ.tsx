@@ -4,27 +4,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import logoIcon from "@/assets/logo-icon.png";
 
 const faqs = [
   {
-    question: "How does the free trial work?",
-    answer: "Start with a 14-day free trial with full access to all features. No credit card required. After the trial, choose a plan that fits your needs.",
+    question: "What is the purpose of this website?",
+    answer: "This platform helps you streamline your interview process by automatically recording, organizing, and centralizing feedback from user interviews.",
   },
   {
-    question: "Can I change plans later?",
-    answer: "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately and we'll prorate the charges.",
-  },
-  {
-    question: "What happens to my data?",
-    answer: "Your data is securely stored with enterprise-grade encryption. You own your data and can export it at any time.",
-  },
-  {
-    question: "Do you offer refunds?",
-    answer: "Yes, we offer a 30-day money-back guarantee. If you're not satisfied, contact us for a full refund.",
-  },
-  {
-    question: "Is there a setup fee?",
-    answer: "No setup fees! Just choose your plan and start using the platform immediately.",
+    question: "How do i contact support?",
+    answer: "You can reach our support team via email at support@playful.com or through the chat widget on our website. We typically respond within 24 hours.",
   },
 ];
 
@@ -34,12 +23,16 @@ const FAQ = () => {
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            {/* Logo Icon */}
+            <div className="inline-block mb-8">
+              <div className="w-20 h-20 bg-card rounded-2xl shadow-soft flex items-center justify-center">
+                <img src={logoIcon} alt="" className="w-12 h-12" />
+              </div>
+            </div>
+            
+            <h2 className="text-5xl lg:text-6xl font-bold mb-4">
               Frequently asked questions
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Everything you need to know about our platform
-            </p>
           </div>
           
           <Accordion type="single" collapsible className="space-y-4">
@@ -47,12 +40,12 @@ const FAQ = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border border-border rounded-xl px-6 bg-card"
+                className="border-none"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
+                <AccordionTrigger className="text-left text-xl font-semibold hover:no-underline py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground text-base pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
