@@ -4,11 +4,11 @@ const Footer = () => {
       <div className="container px-4 mx-auto py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">H</span>
-              </div>
-              <span className="text-xl font-bold">HireFlow</span>
+            <div className="flex items-center gap-3 mb-4">
+              <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/>
+              </svg>
+              <span className="text-2xl font-bold">Playful</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Streamline your hiring process with automated interview management.
