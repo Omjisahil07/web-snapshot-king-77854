@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 const HeroEnhanced = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background to-secondary/20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 animate-float">
         <img src={logoIcon} alt="" className="w-24 h-24 opacity-60" />
@@ -28,8 +28,8 @@ const HeroEnhanced = () => {
       <div className="container px-4 mx-auto relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8">
           <div className="inline-block">
-            <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full text-sm font-medium text-primary border border-primary/20">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary rounded-full text-sm font-medium text-primary-foreground">
+              <span className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse" />
               New! Record user interviews without recording bots
             </span>
           </div>

@@ -80,15 +80,23 @@ const Testimonials = () => {
             ))}
           </div>
 
-          {/* Large Profile Image */}
+          {/* Large Profile Image with Watch Review Button */}
           <div className="hidden lg:block">
             <div className="sticky top-8">
-              <div className="rounded-3xl overflow-hidden bg-muted">
+              <div className="rounded-3xl overflow-hidden bg-muted relative group">
                 <img 
                   src={testimonialProfile} 
                   alt="Professional testimonial" 
                   className="w-full h-auto object-cover"
                 />
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+                  <button className="px-6 py-3 bg-background/90 backdrop-blur-sm text-foreground rounded-xl font-medium shadow-lg hover:bg-background transition-all flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                    </svg>
+                    Watch Review
+                  </button>
+                </div>
               </div>
             </div>
           </div>
