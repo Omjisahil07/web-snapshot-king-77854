@@ -1,35 +1,40 @@
 import testimonialProfile from "@/assets/testimonial-profile.png";
+import avatarManu from "@/assets/avatar-manu.png";
+import avatarSarah from "@/assets/avatar-sarah.png";
+import avatarJames from "@/assets/avatar-james.png";
+import avatarDua from "@/assets/avatar-dua.png";
+import avatarEmily from "@/assets/avatar-emily.png";
 
 const testimonials = [
   {
     name: "Manu Arora",
     role: "Founder of Aceternity",
-    content: "The team at Playful has been incredible to work with. Their attention to detail and commitment to quality is unmatched.",
-    image: null,
+    content: "This platform is revolutionary. I hired my first candidate from Playful recruiting and they turned out to be great. Now since I'm asked to write a bigger review so that it fills the first card, I'll just go on and start writing gibberish. This page is cool, IDK about playful, just go ahead and buy Aceternity Pro.",
+    image: avatarManu,
   },
   {
     name: "Sarah Chen",
     role: "Head of Talent, TechVision Inc.",
-    content: "The level of customization and flexibility in the platform is outstanding. We've been able to adapt it perfectly to our unique hiring workflows, and the results have been phenomenal. The customer support team is always there when we need them.",
-    image: null,
+    content: "Working with this platform has transformed our recruitment process. The AI-powered matching system saved us countless hours in finding the perfect candidates.",
+    image: avatarSarah,
   },
   {
     name: "James Rodriguez",
     role: "VP of HR, Global Solutions Ltd.",
-    content: "Honestly, I'm not even the kind of guy who writes reviews, but this is just incredible. All the things are so intuitive and easy to use. I love the dashboard and how everything flows together seamlessly.",
-    image: null,
+    content: "The platform's intuitive interface and powerful analytics have completely revolutionized how we approach talent acquisition.",
+    image: avatarJames,
   },
   {
     name: "Dua Lipa",
     role: "Founder of my heart",
-    content: "Look, I'll keep this short. I'm tired of people saying they're busy but they're not. This platform actually saves time. Real gibberish. This page is cool, IDK about playful, just go ahead and buy Aceternity Pro.",
-    image: null,
+    content: "The team at Playful has been incredible to work with. Their attention to detail and commitment to quality is unmatched.",
+    image: avatarDua,
   },
   {
     name: "Emily Nakamura",
     role: "Talent Acquisition Director, Future Dynamics",
-    content: "Game-changing platform for our recruitment process. The analytics and insights have helped us make better hiring decisions consistently.",
-    image: null,
+    content: "The level of customization and flexibility in the platform is outstanding. We've been able to adapt it perfectly to our unique hiring workflows, and the results have been phenomenal. The customer support team is always there when we need them.",
+    image: avatarEmily,
   },
 ];
 
@@ -52,28 +57,29 @@ const Testimonials = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto items-start">
-          {/* Testimonial Cards Grid */}
+        <div className="grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto items-start">
+          {/* Testimonial Cards Masonry Grid */}
           <div className="grid gap-6">
-            {testimonials.slice(0, 4).map((testimonial, index) => (
+            {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="p-6 rounded-2xl bg-card border border-border"
+                className="p-8 rounded-3xl bg-card shadow-soft"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary font-semibold text-sm">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <div className="flex-1">
-                    <div className="font-semibold mb-1">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground mb-3">
+                <p className="text-foreground leading-relaxed mb-6">
+                  {testimonial.content}
+                </p>
+                
+                <div className="flex items-center gap-3">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <div className="font-semibold text-foreground">{testimonial.name}</div>
+                    <div className="text-sm text-muted-foreground">
                       {testimonial.role}
                     </div>
-                    <p className="text-foreground leading-relaxed">
-                      {testimonial.content}
-                    </p>
                   </div>
                 </div>
               </div>
